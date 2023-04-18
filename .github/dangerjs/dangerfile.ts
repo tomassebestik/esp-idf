@@ -9,10 +9,10 @@ import prFirstTimeContributor from './prFirstTimeContributor';
 import prCommitMessage from './prCommitMessage';
 
 async function runDangerRules() {
-	// await prFirstTimeContributor();
-	// prCommitsTooManyCommits();
-	// prDescription();
-	// prTargetBranch();
+	await prFirstTimeContributor();
+	prCommitsTooManyCommits();
+	prDescription();
+	prTargetBranch();
 	// prCommitMessage();
 
 	// Add success log if no issues
