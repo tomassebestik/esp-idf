@@ -6,32 +6,36 @@
  * @dangerjs WARN
  */
 
+import { log } from "console";
+
 declare const danger: any;
 declare const warn: any;
 
 export default function (): void {
-	const commitMessages: string[] = danger.git.commits.map((commit: { message: string }) => commit.message);
+	const commit = danger.git.commits;
 
-	console.log(commitMessages);
-	const detectRegexes: RegExp[] = [
-		/^Merge pull request #\d+ from .*/i, // Automatically generated message by GitHub
-		/^Merged .+:.+ into .+/i, // Automatically generated message by GitHub
-		/^Automatic merge by GitHub Action/i, // Automatically generated message by GitHub
-		/^Merge branch '.*' of .+ into .+/i, // Automatically generated message by GitHub
-		/^Initial commit/i, // Automatically generated message by GitHub
-		/^WIP.*/i, // Message starts with prefix "WIP"
-		/^Cleaned.*/i, // Message starts "Cleaned"
-		/clean ?up/i, // Message contains "clean up"
-		/^[^A-Za-z0-9\s].*/, // Message starts with special characters
-	];
+    console.log(commit);
 
-	let partMessages: string[] = [];
+    // const commitMessages: string[] = danger.git.commits.map((commit: { message: string }) => commit.message);
 
-	for (message of commitMessages) {
-		if (detectRegexes.some((regex) => message.match(regex))) {
-			warn(`The commit message \`${message}\` appears to be a temporary or automatically generated message`);
-		}
+	// console.log(commitMessages);
+	// const detectRegexes: RegExp[] = [
+	// 	/^Merge pull request #\d+ from .*/i, // Automatically generated message by GitHub
+	// 	/^Merged .+:.+ into .+/i, // Automatically generated message by GitHub
+	// 	/^Automatic merge by GitHub Action/i, // Automatically generated message by GitHub
+	// 	/^Merge branch '.*' of .+ into .+/i, // Automatically generated message by GitHub
+	// 	/^Initial commit/i, // Automatically generated message by GitHub
+	// 	/^WIP.*/i, // Message starts with prefix "WIP"
+	// 	/^Cleaned.*/i, // Message starts "Cleaned"
+	// 	/clean ?up/i, // Message contains "clean up"
+	// 	/^[^A-Za-z0-9\s].*/, // Message starts with special characters
+	// ];
 
+	// let partMessages: string[] = [];
+
+	// for (const message of commitMessages) {
+
+    // }
 
 	// // Search for the messages in each commit
 	// let partMessages: string[] = [];

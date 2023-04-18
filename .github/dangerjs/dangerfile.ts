@@ -13,7 +13,7 @@ async function runDangerRules() {
 	prCommitsTooManyCommits();
 	prDescription();
 	prTargetBranch();
-	// prCommitMessage();
+	prCommitMessage();
 
 	// Add success log if no issues
 	const dangerFails: number = results.fails.length;
