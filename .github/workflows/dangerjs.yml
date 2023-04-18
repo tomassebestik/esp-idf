@@ -6,9 +6,9 @@ on:
     branches:
       - '*'
   workflow_dispatch:
-  push:
-    branches:
-      - '*'
+  # push:
+  #   branches:
+  #     - '*'
 
 permissions:
   actions: read
