@@ -1,27 +1,29 @@
-declare const results: any;
-declare const message: any;
-declare const markdown: any;
+import { DangerResults } from "danger";
+declare const results: DangerResults;
+declare const message: (message: string, results?: DangerResults) => void;
+declare const markdown: (message: string, results?: DangerResults) => void;
 
-import prCommitsTooManyCommits from './prCommitsTooManyCommits';
-import prDescription from './prDescription';
-import prTargetBranch from './prTargetBranch';
-import prFirstTimeContributor from './prFirstTimeContributor';
-import prCommitMessage from './prCommitMessage';
+// Import modules with danger rules
+import prCommitsTooManyCommits from "./prCommitsTooManyCommits";
+import prDescription from "./prDescription";
+import prTargetBranch from "./prTargetBranch";
+import prFirstTimeContributor from "./prFirstTimeContributor";
+import prCommitMessage from "./prCommitMessage";
 
 async function runDangerRules() {
-	await prFirstTimeContributor();
-	prCommitsTooManyCommits();
-	prDescription();
-	prTargetBranch();
-	prCommitMessage();
+    await prFirstTimeContributor();
+    prCommitsTooManyCommits();
+    prDescription();
+    prTargetBranch();
+    prCommitMessage();
 
-	// Add success log if no issues
-	const dangerFails: number = results.fails.length;
-	const dangerWarns: number = results.warnings.length;
-	const dangerInfos: number = results.messages.length;
-	if (!dangerFails && !dangerWarns && !dangerInfos) {
-		return message('Good Job! All checks are passing!');
-	}
+    // Add success log if no issues
+    const dangerFails: number = results.fails.length;
+    const dangerWarns: number = results.warnings.length;
+    const dangerInfos: number = results.messages.length;
+    if (!dangerFails && !dangerWarns && !dangerInfos) {
+        return message("Good Job! All checks are passing!");
+    }
 }
 
 runDangerRules();

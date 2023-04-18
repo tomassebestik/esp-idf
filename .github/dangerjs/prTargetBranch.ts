@@ -3,9 +3,9 @@
  *
  * @dangerjs FAIL
  */
-
-declare const danger: any;
-declare const fail: any;
+import { DangerDSLType, DangerResults } from "danger";
+declare const danger: DangerDSLType;
+declare const fail: (message: string, results?: DangerResults) => void;
 
 export default function (): void {
 	const prTargetBranch: string = danger.github?.pr?.base?.ref;

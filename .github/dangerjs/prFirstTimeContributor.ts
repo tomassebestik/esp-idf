@@ -4,11 +4,12 @@
  * @dangerjs INFO
  */
 
-declare const danger: any;
-declare const message: any;
+import { DangerDSLType, DangerResults } from "danger";
+declare const danger: DangerDSLType;
+declare const message: (message: string, results?: DangerResults) => void;
 
 interface Contributor {
-	login: string;
+	login?: string;
 }
 
 export default async function (): Promise<void> {

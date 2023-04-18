@@ -4,8 +4,9 @@
  * @dangerjs WARN
  */
 
-declare const danger: any;
-declare const warn: any;
+import { DangerDSLType, DangerResults } from "danger";
+declare const danger: DangerDSLType;
+declare const warn: (message: string, results?: DangerResults) => void;
 
 export default function (): void {
 	const prDescription: string = danger.github.pr.body;
