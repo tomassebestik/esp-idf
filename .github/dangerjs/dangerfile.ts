@@ -4,6 +4,7 @@ declare const message: (message: string, results?: DangerResults) => void;
 declare const markdown: (message: string, results?: DangerResults) => void;
 
 // Import modules with danger rules
+// (Modules with checks are stored in ".github/dangerjs/<module_name>.ts". To import them, use path relative to "dangerfile.ts")
 import prCommitsTooManyCommits from "./prCommitsTooManyCommits";
 import prDescription from "./prDescription";
 import prTargetBranch from "./prTargetBranch";

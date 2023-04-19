@@ -1,11 +1,3 @@
-/**
- * Check if commit messages are sufficiently descriptive (not too short).
- *
- * Search for commit messages that appear to be automatically generated or temporary messages and report them.
- *
- * @dangerjs WARN
- */
-
 import { DangerDSLType, DangerResults } from "danger";
 declare const danger: DangerDSLType;
 declare const warn: (message: string, results?: DangerResults) => void;
@@ -14,6 +6,13 @@ interface Commit {
     message: string;
 }
 
+/**
+ * Check if commit messages are sufficiently descriptive (not too short).
+ *
+ * Search for commit messages that appear to be automatically generated or temporary messages and report them.
+ *
+ * @dangerjs WARN
+ */
 export default function (): void {
     const prCommits: Commit[] = danger.git.commits;
 

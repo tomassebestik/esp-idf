@@ -1,13 +1,12 @@
+import { DangerDSLType, DangerResults } from "danger";
+declare const danger: DangerDSLType;
+declare const message: (message: string, results?: DangerResults) => void;
+
 /**
  * Check if pull request has not an excessive numbers of commits (if squashed)
  *
  * @dangerjs INFO
  */
-
-import { DangerDSLType, DangerResults } from "danger";
-declare const danger: DangerDSLType;
-declare const message: (message: string, results?: DangerResults) => void;
-
 export default function (): void {
     const tooManyCommitThreshold: number = 2; // above this number of commits, squash commits is suggested
     const prCommits: number = danger.github.commits.length;
