@@ -21,6 +21,9 @@ export default function (): void {
         /^Merged .+:.+ into .+/i, // Automatically generated message by GitHub
         /^Automatic merge by GitHub Action/i, // Automatically generated message by GitHub
         /^Merge branch '.*' of .+ into .+/i, // Automatically generated message by GitHub
+        /^Create\s[a-zA-Z0-9_.-]+(\.[a-zA-Z0-9]{1,4})?(?=\s|$)/, // Automatically generated message by GitHub using UI
+        /^Delete\s[a-zA-Z0-9_.-]+(\.[a-zA-Z0-9]{1,4})?(?=\s|$)/, // Automatically generated message by GitHub using UI
+        /^Update\s[a-zA-Z0-9_.-]+(\.[a-zA-Z0-9]{1,4})?(?=\s|$)/, // Automatically generated message by GitHub using UI
         /^Initial commit/i, // Automatically generated message by GitHub
         /^WIP.*/i, // Message starts with prefix "WIP"
         /^Cleaned.*/i, // Message starts "Cleaned", , probably temporary

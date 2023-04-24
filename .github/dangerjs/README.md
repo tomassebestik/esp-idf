@@ -1,7 +1,7 @@
 # DangerJS pull request automatic review tool - GitHub
 
 ## Implementation
-The main development is done in [Espressif Gitlab project esp-idf](https://gitlab.espressif.cn:6688/espressif/esp-idf).
+The main development is done in `Espressif Gitlab project esp-idf`.
 Espressif [GitHub project espressif/esp-idf](https://github.com/espressif/esp-idf) is only a public mirror. 
 
 Therefore, all changes and updates to DangerJS files (`.github/dangerjs`) must be made via MR in the **Gitlab** repository by Espressif engineer. 
