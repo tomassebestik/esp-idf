@@ -39,6 +39,6 @@ const repoName: string | undefined = process.env.GITHUB_REPOSITORY;
 const runId: string | undefined = process.env.GITHUB_RUN_ID;
 
 const retryLinkUrl: string = `${serverUrl}/${repoName}/actions/runs/${runId}`;
-const retryLink: string = `***\n:repeat: You can re-run automatic PR checks by retrying the [DangerJS action](${retryLinkUrl})\n***`;
+const retryLink: string = `<sub>:repeat: You can re-run automatic PR checks by retrying the <a href="${retryLinkUrl}">DangerJS action</a></sub><hr>`;
 
 markdown(retryLink);

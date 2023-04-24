@@ -14,6 +14,7 @@ const messageKnownContributor: string = `
 If the change is approved and passes the tests in our internal git repository, on next sync merged change will appear in this public Github repository.
 
 📘 Please check [Contributions Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/contribute/index.html#contributions-guide) for the contribution checklist, information regarding code and documentation style, testing and other topics.
+***
 `;
 
 const messageFirstContributor: string = `
@@ -31,6 +32,7 @@ Espressif develops the ESP-IDF project in an internal repository (Gitlab). We do
 6. On next sync from the internal git repository merged change will appear in this public Github repository
 
 📘 Please check [Contributions Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/contribute/index.html#contributions-guide) for the contribution checklist, information regarding code and documentation style, testing and other topics.
+***
 `;
 
 /**
