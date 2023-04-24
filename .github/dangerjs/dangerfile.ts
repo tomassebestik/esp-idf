@@ -29,16 +29,20 @@ async function runDangerRules(): Promise<void> {
     if (!dangerFails && !dangerWarns && !dangerInfos) {
         return message("Good Job! All checks are passing!");
     }
+
+    // Add retry link
+    addRetryLink();
 }
 
 runDangerRules();
 
-// Add retry link (always)
-const serverUrl: string | undefined = process.env.GITHUB_SERVER_URL;
-const repoName: string | undefined = process.env.GITHUB_REPOSITORY;
-const runId: string | undefined = process.env.GITHUB_RUN_ID;
+function addRetryLink(): void {
+    const serverUrl: string | undefined = process.env.GITHUB_SERVER_URL;
+    const repoName: string | undefined = process.env.GITHUB_REPOSITORY;
+    const runId: string | undefined = process.env.GITHUB_RUN_ID;
 
-const retryLinkUrl: string = `${serverUrl}/${repoName}/actions/runs/${runId}`;
-const retryLink: string = `<sub>:repeat: You can re-run automatic PR checks by retrying the <a href="${retryLinkUrl}">DangerJS action</a></sub><hr>`;
+    const retryLinkUrl: string = `${serverUrl}/${repoName}/actions/runs/${runId}`;
+    const retryLink: string = `<sub>:repeat: You can re-run automatic PR checks by retrying the <a href="${retryLinkUrl}">DangerJS action</a></sub>`;
 
-markdown(retryLink);
+    markdown(retryLink);
+}
