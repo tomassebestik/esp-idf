@@ -1,6 +1,5 @@
-import { DangerDSLType, DangerResults } from "danger";
+import { DangerDSLType } from "danger";
 declare const danger: DangerDSLType;
-declare const markdown: (message: string, results?: DangerResults) => void;
 
 interface Contributor {
     login?: string;
